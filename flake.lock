@@ -1,0 +1,92 @@
+{
+  "nodes": {
+    "aider": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1715914281,
+        "narHash": "sha256-W/d0LK6did9eOT72zoDO3/ovSobmSvRBqhtlAbbd1vg=",
+        "owner": "paul-gauthier",
+        "repo": "aider",
+        "rev": "014ec6365eb299752751cc7fab490b46f784e678",
+        "type": "github"
+      },
+      "original": {
+        "owner": "paul-gauthier",
+        "repo": "aider",
+        "type": "github"
+      }
+    },
+    "flake-parts": {
+      "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib"
+      },
+      "locked": {
+        "lastModified": 1715865404,
+        "narHash": "sha256-/GJvTdTpuDjNn84j82cU6bXztE0MSkdnTWClUCRub78=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "8dc45382d5206bd292f9c2768b8058a8fd8311d9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "grep-ast": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703681601,
+        "narHash": "sha256-LupRIoy9G/jK02NMV+Uu2+mFX+5b0XV5M2JTfO16RfM=",
+        "owner": "paul-gauthier",
+        "repo": "grep-ast",
+        "rev": "4adb83e164f31c3a9ae364de8a7b14b9481aca60",
+        "type": "github"
+      },
+      "original": {
+        "owner": "paul-gauthier",
+        "repo": "grep-ast",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1715787315,
+        "narHash": "sha256-cYApT0NXJfqBkKcci7D9Kr4CBYZKOQKDYA23q8XNuWg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "33d1e753c82ffc557b4a585c77de43d4c922ebb5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-lib": {
+      "locked": {
+        "lastModified": 1714640452,
+        "narHash": "sha256-QBx10+k6JWz6u7VsohfSw8g8hjdBZEf8CFzXH1/1Z94=",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/50eb7ecf4cd0a5756d7275c8ba36790e5bd53e33.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/50eb7ecf4cd0a5756d7275c8ba36790e5bd53e33.tar.gz"
+      }
+    },
+    "root": {
+      "inputs": {
+        "aider": "aider",
+        "flake-parts": "flake-parts",
+        "grep-ast": "grep-ast",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
