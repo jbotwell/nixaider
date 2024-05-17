@@ -25,10 +25,10 @@
           pyPkgs = pkgs.python312Packages;
           aider = pyPkgs.buildPythonPackage {
             pname = "aider";
-            version = "0.30.0";
+            version = "0.35.0";
             src = fetchGit {
               url = "https://github.com/paul-gauthier/aider";
-              rev = "b14ca861c1709cc3e53160560f09f6ebf16f2d66";
+              rev = "aaaef12ccec391006637957d506c532435184d32";
             };
             doCheck = false;
             propagatedBuildInputs = with pyPkgs; [
@@ -56,9 +56,16 @@
               pypandoc
               litellm
               google-generativeai
+              streamlit
               # not defined in nixpkgs
               grep-ast
             ];
+          };
+          streamlit = pyPkgs.buildPythonPackage {
+            pname = "streamlit";
+            version = "1.2.0";
+            format = "wheel";
+            src = ./streamlit-1.34.0-py2.py3-none-any.whl;
           };
           grep-ast = pyPkgs.buildPythonPackage {
             pname = "grep-ast";
