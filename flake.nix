@@ -21,7 +21,6 @@
 
       perSystem = { pkgs, system, ... }:
         let
-          # py = pkgs.python312;
           pyPkgs = pkgs.python312Packages;
           aider = pyPkgs.buildPythonPackage {
             pname = "aider";
@@ -66,6 +65,7 @@
             version = "1.2.0";
             format = "wheel";
             src = ./streamlit-1.34.0-py2.py3-none-any.whl;
+            propagatedBuildInputs = with pyPkgs; [ blinker tornado ];
           };
           grep-ast = pyPkgs.buildPythonPackage {
             pname = "grep-ast";
@@ -87,13 +87,6 @@
             format = "wheel";
             src =
               ./tree_sitter_languages-1.10.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl;
-            # src = pyPkgs.fetchPypi {
-            #   inherit pname version format;
-            #   sha256 = "bS8c0dG91lMy+cK2fUnc8UjPHe11KFHRWaw+XuT00mA=";
-            #   python = "cp312";
-            #   abi = "cp312";
-            #   platform = "manylinux_2_17_x86_64.manylinux2014_x86_64";
-            # };
             propagatedBuildInputs = with pyPkgs; [ tree-sitter ];
           };
         in { packages = { default = aider; }; };
