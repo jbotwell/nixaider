@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    aider = {
+    aider-input = {
       url = "github:paul-gauthier/aider";
       flake = false;
     };
@@ -15,27 +15,19 @@
   };
 
   outputs = {
-    nixpkgs,
     flake-parts,
-    aider,
+    aider-input,
     ...
   } @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
 
-      perSystem = {
-        pkgs,
-        system,
-        ...
-      }: let
+      perSystem = {pkgs, ...}: let
         pyPkgs = pkgs.python312Packages;
         aider = pyPkgs.buildPythonPackage {
           pname = "aider";
-          version = "0.36.0";
-          src = fetchGit {
-            url = "https://github.com/paul-gauthier/aider";
-            rev = "6382153597af092bfdac4ea30104d3243720502e";
-          };
+          version = "0.37.0";
+          src = aider-input;
           doCheck = false;
           propagatedBuildInputs = with pyPkgs; [
             configargparse
@@ -62,17 +54,10 @@
             pypandoc
             litellm
             google-generativeai
-            streamlit
             # not defined in nixpkgs
+            streamlit
             grep-ast
           ];
-        };
-        streamlit = pyPkgs.buildPythonPackage {
-          pname = "streamlit";
-          version = "1.2.0";
-          format = "wheel";
-          src = ./streamlit-1.34.0-py2.py3-none-any.whl;
-          propagatedBuildInputs = with pyPkgs; [blinker tornado];
         };
         grep-ast = pyPkgs.buildPythonPackage {
           pname = "grep-ast";
@@ -87,6 +72,13 @@
             # not defined in nixpkgs
             tree-sitter-languages
           ];
+        };
+        streamlit = pyPkgs.buildPythonPackage {
+          pname = "streamlit";
+          version = "1.2.0";
+          format = "wheel";
+          src = ./streamlit-1.34.0-py2.py3-none-any.whl;
+          propagatedBuildInputs = with pyPkgs; [blinker tornado];
         };
         tree-sitter-languages = pyPkgs.buildPythonPackage {
           pname = "tree_sitter_languages";
