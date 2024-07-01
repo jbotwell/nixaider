@@ -26,7 +26,7 @@
         pyPkgs = pkgs.python312Packages;
         aider = pyPkgs.buildPythonPackage {
           pname = "aider";
-          version = "0.37.0";
+          version = "0.40.0";
           src = aider-input;
           doCheck = false;
           propagatedBuildInputs = with pyPkgs; [
