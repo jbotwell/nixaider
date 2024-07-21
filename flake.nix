@@ -26,34 +26,35 @@
         pyPkgs = pkgs.python312Packages;
         aider = pyPkgs.buildPythonPackage {
           pname = "aider";
-          version = "0.40.0";
+          version = "0.45.0";
           src = aider-input;
           doCheck = false;
           propagatedBuildInputs = with pyPkgs; [
-            configargparse
-            gitpython
-            openai
-            tiktoken
-            jsonschema
-            rich
-            prompt-toolkit
-            numpy
-            scipy
             backoff
-            pathspec
-            networkx
+            beautifulsoup4
+            configargparse
+            diff-match-patch
             diskcache
+            gitpython
+            google-generativeai
+            importlib-resources
+            jsonschema
+            litellm
+            networkx
+            numpy
+            openai
             packaging
+            pathspec
+            pillow
+            playwright
+            prompt-toolkit
+            pypandoc
+            pyyaml
+            rich
+            scipy
             sounddevice
             soundfile
-            beautifulsoup4
-            pyyaml
-            pillow
-            diff-match-patch
-            playwright
-            pypandoc
-            litellm
-            google-generativeai
+            tiktoken
             # not defined in nixpkgs
             streamlit
             grep-ast
