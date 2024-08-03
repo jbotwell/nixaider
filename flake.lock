@@ -3,15 +3,16 @@
     "aider-input": {
       "flake": false,
       "locked": {
-        "lastModified": 1721381381,
-        "narHash": "sha256-Rf8Y/zoWMClljBzTl3J0ugLpeh5tK6mc2ovSEmGRP30=",
+        "lastModified": 1722457300,
+        "narHash": "sha256-PlkC88/WN4O3QdFGjBEVkl7ateqIS/PRADAK00kXfHU=",
         "owner": "paul-gauthier",
         "repo": "aider",
-        "rev": "5ae96231ad5be9158e35bb916b3d276f3139d18a",
+        "rev": "5f82c19f594d9b629d4a10571e69f31388e3e909",
         "type": "github"
       },
       "original": {
         "owner": "paul-gauthier",
+        "ref": "v0.47.1",
         "repo": "aider",
         "type": "github"
       }
