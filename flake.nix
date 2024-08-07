@@ -5,8 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     aider-input = {
-      # v0.47.0 is commit 5ae96231
-      url = "github:paul-gauthier/aider/5ae96231ad5be9158e35bb916b3d276f3139d18a";
+      url = "github:paul-gauthier/aider/v0.47.1";
       flake = false;
     };
     grep-ast = {
@@ -27,7 +26,7 @@
         pyPkgs = pkgs.python312Packages;
         aider = pyPkgs.buildPythonPackage {
           pname = "aider";
-          version = "0.47.0";
+          version = "0.47.1";
           src = aider-input;
           doCheck = false;
           propagatedBuildInputs = with pyPkgs; [
@@ -63,7 +62,7 @@
         };
         grep-ast = pyPkgs.buildPythonPackage {
           pname = "grep-ast";
-          version = "0.2.4";
+          version = "0.2.4"; # TODO: update to 0.3.3 after rebase
           src = fetchGit {
             url = "https://github.com/paul-gauthier/grep-ast";
             rev = "4adb83e164f31c3a9ae364de8a7b14b9481aca60";
@@ -77,7 +76,7 @@
         };
         streamlit = pyPkgs.buildPythonPackage {
           pname = "streamlit";
-          version = "1.2.0";
+          version = "1.2.0"; # TODO: update to 1.37.0 after rebase
           format = "wheel";
           src = ./streamlit-1.34.0-py2.py3-none-any.whl;
           propagatedBuildInputs = with pyPkgs; [blinker tornado];
