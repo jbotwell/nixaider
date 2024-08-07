@@ -14,6 +14,7 @@
         "owner": "paul-gauthier",
         "ref": "v0.47.1",
         "repo": "aider",
+        "rev": "5ae96231ad5be9158e35bb916b3d276f3139d18a",
         "type": "github"
       }
     },
@@ -32,22 +33,6 @@
       "original": {
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "type": "github"
-      }
-    },
-    "grep-ast": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1716221007,
-        "narHash": "sha256-xeHT8Zp1NyLeK2864DsFpNoxrct/EcUEbG+d33Gc/LQ=",
-        "owner": "paul-gauthier",
-        "repo": "grep-ast",
-        "rev": "3cf620091364e95e501fa2fd1125cc9fae7971e5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "paul-gauthier",
-        "repo": "grep-ast",
         "type": "github"
       }
     },
@@ -83,7 +68,6 @@
       "inputs": {
         "aider-input": "aider-input",
         "flake-parts": "flake-parts",
-        "grep-ast": "grep-ast",
         "nixpkgs": "nixpkgs"
       }
     }
