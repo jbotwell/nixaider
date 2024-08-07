@@ -5,8 +5,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     aider-input = {
-      # v0.47.0 is commit 5ae96231
-      url = "github:paul-gauthier/aider/5ae96231ad5be9158e35bb916b3d276f3139d18a";
+      url = "github:paul-gauthier/aider/v0.47.1";
+      flake = false;
+    };
+    grep-ast = {
+      url = "github:paul-gauthier/grep-ast";
       flake = false;
     };
   };
@@ -23,7 +26,7 @@
         pyPkgs = pkgs.python312Packages;
         aider = pyPkgs.buildPythonPackage {
           pname = "aider";
-          version = "0.47.0";
+          version = "0.47.1";
           src = aider-input;
           doCheck = false;
           propagatedBuildInputs = with pyPkgs; [
@@ -76,7 +79,7 @@
         };
         streamlit = pyPkgs.buildPythonPackage rec {
           pname = "streamlit";
-          version = "1.2.0";
+          version = "1.2.0";  # TODO: update to 1.37.0 after rebase
           format = "wheel";
           src = pyPkgs.fetchPypi {
             inherit pname version format;
