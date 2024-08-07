@@ -9,10 +9,6 @@
       url = "github:paul-gauthier/aider/5ae96231ad5be9158e35bb916b3d276f3139d18a";
       flake = false;
     };
-    grep-ast = {
-      url = "github:paul-gauthier/grep-ast";
-      flake = false;
-    };
   };
 
   outputs = {
@@ -61,12 +57,15 @@
             grep-ast
           ];
         };
-        grep-ast = pyPkgs.buildPythonPackage {
-          pname = "grep-ast";
-          version = "0.2.4";
-          src = fetchGit {
-            url = "https://github.com/paul-gauthier/grep-ast";
-            rev = "4adb83e164f31c3a9ae364de8a7b14b9481aca60";
+        grep-ast = pyPkgs.buildPythonPackage rec {
+          pname = "grep_ast";
+          version = "0.3.2";
+          format = "wheel";
+          src = pyPkgs.fetchPypi {
+            inherit pname version format;
+            dist = "py3";
+            python = "py3";
+            sha256 = "sha256-t864R0OYPD9PW8qC8zdFNM2dvXWXktDe31ZI/tu28/w=";
           };
           doCheck = false;
           propagatedBuildInputs = with pyPkgs; [
