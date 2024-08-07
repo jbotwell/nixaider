@@ -5,7 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     aider-input = {
-      url = "github:paul-gauthier/aider";
+      # v0.47.0 is commit 5ae96231
+      url = "github:paul-gauthier/aider/5ae96231ad5be9158e35bb916b3d276f3139d18a";
       flake = false;
     };
     grep-ast = {
