@@ -102,6 +102,13 @@
           propagatedBuildInputs = with pyPkgs; [tree-sitter];
           doCheck = false;
         };
-      in {packages = {default = aider;};};
+      in {
+        packages = {default = aider;};
+        devShells.default = pkgs.mkShell {
+          packages = [
+            (pkgs.python312.withPackages (ps: [aider]))
+          ];
+        };
+      };
     };
 }
