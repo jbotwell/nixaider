@@ -3,18 +3,17 @@
     "aider-input": {
       "flake": false,
       "locked": {
-        "lastModified": 1722457300,
-        "narHash": "sha256-PlkC88/WN4O3QdFGjBEVkl7ateqIS/PRADAK00kXfHU=",
+        "lastModified": 1723041951,
+        "narHash": "sha256-o/AW1Gisq6azZmpL6B1taAFVZZRkWZywSNXc1p4abZs=",
         "owner": "paul-gauthier",
         "repo": "aider",
-        "rev": "5f82c19f594d9b629d4a10571e69f31388e3e909",
+        "rev": "77c13c5cbe64e4e7f362144ce657a5510ee716e0",
         "type": "github"
       },
       "original": {
         "owner": "paul-gauthier",
-        "ref": "v0.47.1",
+        "ref": "v0.48.1",
         "repo": "aider",
-        "rev": "5ae96231ad5be9158e35bb916b3d276f3139d18a",
         "type": "github"
       }
     },
