@@ -79,11 +79,11 @@
         };
         streamlit = pyPkgs.buildPythonPackage rec {
           pname = "streamlit";
-          version = "1.2.0";  # TODO: update to 1.37.0 after rebase
+          version = "1.37.0";
           format = "wheel";
           src = pyPkgs.fetchPypi {
             inherit pname version format;
-            sha256 = "sha256-NoRvVpc/AZyYCmVzn81rYhWRoMWq4crulZsjixQy67c=";
+            sha256 = "sha256-0X4tMrB1onCpfxNKtdIru5i05HT6Jh/0ncSis4A4bIQ=";
           };
           propagatedBuildInputs = with pyPkgs; [blinker tornado];
           doCheck = false;
