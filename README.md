@@ -1,0 +1,1 @@
+This project was originally for personal use so I could use aider on my nixos machine. However, it has since become a part of [nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ai/aider-chat/package.nix), so I use that now. Archiving this repo.
