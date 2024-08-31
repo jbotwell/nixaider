@@ -5,11 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     aider-input = {
-      url = "github:paul-gauthier/aider/v0.47.1";
-      flake = false;
-    };
-    grep-ast = {
-      url = "github:paul-gauthier/grep-ast";
+      url = "github:paul-gauthier/aider/v0.48.1";
       flake = false;
     };
   };
@@ -26,7 +22,7 @@
         pyPkgs = pkgs.python312Packages;
         aider = pyPkgs.buildPythonPackage {
           pname = "aider";
-          version = "0.47.1";
+          version = "0.48.1";
           src = aider-input;
           doCheck = false;
           propagatedBuildInputs = with pyPkgs; [
@@ -62,13 +58,13 @@
         };
         grep-ast = pyPkgs.buildPythonPackage rec {
           pname = "grep_ast";
-          version = "0.3.2";
+          version = "0.3.3";
           format = "wheel";
           src = pyPkgs.fetchPypi {
             inherit pname version format;
             dist = "py3";
             python = "py3";
-            sha256 = "sha256-t864R0OYPD9PW8qC8zdFNM2dvXWXktDe31ZI/tu28/w=";
+            sha256 = "sha256-UVy4ib/+/vomxKsTd7mnWz/GeKpfoCv5qk+PIJmag60=";
           };
           doCheck = false;
           propagatedBuildInputs = with pyPkgs; [
